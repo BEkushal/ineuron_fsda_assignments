@@ -52,7 +52,7 @@ name having call_time >=10 order by name) as results
 
 
 -- 3. the goal is to obtain a single 3 single column 'BALANCE' for 3 different tables respectively. 
--- (a) 'BALANCE' = 2746 (b) 'BALANCE' = -617 (c) 'BALANCE' = 20940
+-- (a) 'BALANCE' = 2746 (b) 'BALANCE' = -612 (c) 'BALANCE' = 20940
 
 create table transactions (
 ammount int not null,
