@@ -83,12 +83,21 @@ create table transactions_1 (ammount int not null, date date)
 insert into transactions_1 values (1, '2020-06-29'), (35, '2020-02-20'), (-50, '2020-02-03'), (-1, '2020-02-26'), (-200, '2020-08-01'),
 (-44, '2020-02-07'),(-5, '2020-02-25'),(1, '2020-06-29'),(1, '2020-06-29'),(-100, '2020-12-29'),(-100, '2020-12-30'),(-100, '2020-12-31')
 
+create table credit_card_fee_1(
+ammount int not null,
+date date not null)
+
+insert into credit_card_fee_1 values (-5, '2020-01-01')
+insert into credit_card_fee_1 values (-5, '2020-03-01'),(-5, '2020-04-01'),(-5, '2020-05-01'),(-5, '2020-06-01'),
+(-5, '2020-07-01'),(-5, '2020-08-01'),(-5, '2020-09-01'),(-5, '2020-10-01'),(-5, '2020-11-01')
+
+
 select sum(ammount) as balance from (select * from transactions_1
 union all
-select * from credit_card_fee) as final_result
+select * from credit_card_fee_1) as final_result
 
 select sum(ammount) from transactions_1
-select sum(ammount) from credit_card_fee
+select sum(ammount) from credit_card_fee_1
 
 create table tansactions_2 (ammount int not null, date date not null)
 insert into tansactions_2 values (6000, '2020-04-03'),(5000, '2020-04-02'),(4000, '2020-04-01'),(3000, '2020-03-01'),
