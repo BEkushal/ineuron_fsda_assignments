@@ -75,9 +75,9 @@ insert into credit_card_fee values (-5, '2020-01-01')
 insert into credit_card_fee values (-5, '2020-02-01'),(-5, '2020-04-01'),(-5, '2020-05-01'),(-5, '2020-06-01'),
 (-5, '2020-07-01'),(-5, '2020-08-01'),(-5, '2020-09-01'),(-5, '2020-10-01'),(-5, '2020-11-01'),(-5, '2020-12-01')
 
-select * from transactions
+select sum(ammount) as balance from (select * from transactions
 union
-select * from credit_card_fee
+select * from credit_card_fee) as result
 
 create table transactions_1 (ammount int not null, date date)
 insert into transactions_1 values (1, '2020-06-29'), (35, '2020-02-20'), (-50, '2020-02-03'), (-1, '2020-02-26'), (-200, '2020-08-01'),
